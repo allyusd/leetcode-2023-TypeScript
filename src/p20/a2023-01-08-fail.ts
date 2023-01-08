@@ -6,7 +6,7 @@ export function exportWarp(s: string): boolean {
 const openList = ["(", "{", "["];
 
 // 結束符號列表，
-const closeList = [")", "}", "]",];
+const closeList = [")", "}", "]"];
 
 // 開始結束符號對應表
 const openCloseMap = new Map<string, string>([
@@ -25,7 +25,7 @@ function isValid(s: string): boolean {
     return false;
   }
 
-  let open = s[0];
+  const open = s[0];
 
   // 如果一開始就不是開始符號，錯誤
   // if (open !== "(" && open !==  "{" && open !==  "[") {
@@ -36,7 +36,7 @@ function isValid(s: string): boolean {
     return false;
   }
 
-  let next = s[1];
+  const next = s[1];
 
   // 如果下一個是對應的結束符號，那驗證剩下的
   if (next === openCloseMap.get(open)) {
@@ -56,4 +56,4 @@ function isValid(s: string): boolean {
   }
 
   return false;
-};
+}
