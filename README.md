@@ -1,1 +1,1 @@
-# leetcode-2023-TypeScript
+# LeetCode-2023-TypeScript
