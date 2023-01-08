@@ -26,11 +26,32 @@ export class ListNode {
  */
 
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+  // console.log(list1);
+  // console.log(list2);
+
+  if (list1 === null && list2 === null) {
+    return null;
+  }
+
+  if (list1 === null) {
+    return list2;
+  }
+
+  if (list2 === null) {
+    return list1;
+  }
+
   let output = null;
 
-  output = new ListNode(88);
-  const node = new ListNode(55);
-  output.next = node;
+  if (list1.val < list2.val) {
+    output = list1;
+    output.next = mergeTwoLists(list1.next, list2);
+    // console.log(output);
+  } else {
+    output = list2;
+    output.next = mergeTwoLists(list1, list2.next);
+    // console.log(output);
+  }
 
   return output;
 }

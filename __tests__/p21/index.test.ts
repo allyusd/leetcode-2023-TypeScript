@@ -8,11 +8,18 @@ function arrayToLinkedList(array: number[]): ListNode | null {
   let first: ListNode | null = null;
   let previous: ListNode | null = null;
 
+  // console.log(array);
   array.forEach((item) => {
-    const node = new ListNode(item, previous);
+    // console.log(item);
+    const node = new ListNode(item);
     if (first === null) {
       first = node;
     }
+
+    if (previous) {
+      previous.next = node;
+    }
+
     previous = node;
   });
 
@@ -41,7 +48,13 @@ describe("21. Merge Two Sorted Lists", () => {
     ],
     [[], [], []],
     [[], [0], [0]],
+    [
+      [-100, -50, 25, 200],
+      [-999, -75, 88],
+      [-999, -100, -75, -50, 25, 88, 200],
+    ],
   ])("case %p, %p", (list1, list2, expected) => {
+    // console.log(arrayToLinkedList(list1));
     const result = linkedListToArray(exportWarp(arrayToLinkedList(list1), arrayToLinkedList(list2)));
     expect(result).toStrictEqual(expected);
   });
