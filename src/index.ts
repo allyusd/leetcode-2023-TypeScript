@@ -10,7 +10,7 @@ function main(): void {
 }
 
 function p1() {
-  const nums = [2,7,11,15];
+  const nums = [2, 7, 11, 15];
   const target = 9;
   const output = exportWarp(nums, target);
   console.log(output);

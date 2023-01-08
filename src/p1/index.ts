@@ -4,7 +4,7 @@ export function exportWarp(nums: number[], target: number): number[] {
 
 // 1. Two Sum
 function twoSum(nums: number[], target: number): number[] {
-  const output:number[] = [];
+  const output: number[] = [];
 
   // 把所有的元素拿出來確認
   for (let i = 0; i < nums.length; i++) {
