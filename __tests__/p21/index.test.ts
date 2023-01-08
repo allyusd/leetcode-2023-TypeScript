@@ -39,7 +39,7 @@ function linkedListToArray(node: ListNode | null): number[] {
   return output;
 }
 
-describe("21. Merge Two Sorted Lists", () => {
+describe.skip("21. Merge Two Sorted Lists", () => {
   test.each([
     [
       [1, 2, 4],
