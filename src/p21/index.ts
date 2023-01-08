@@ -29,7 +29,7 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
   let output = null;
 
   output = new ListNode(88);
-  let node = new ListNode(55);
+  const node = new ListNode(55);
   output.next = node;
 
   return output;
