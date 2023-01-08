@@ -5,10 +5,10 @@ export function helloWorld(): string {
 }
 
 function main(): void {
-  console.log(helloWorld());
+  // console.log(helloWorld());
   // p1();
-  const s = "012345";
-  console.log(s.substring(2, s.length));
+  // const s = "012345";
+  // console.log(s.substring(2, s.length));
 }
 
 function p1() {

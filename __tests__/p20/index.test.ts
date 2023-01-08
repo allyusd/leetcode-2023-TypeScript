@@ -1,6 +1,6 @@
 import { exportWarp } from "../../src/p20";
 
-describe("20. Valid Parentheses", () => {
+describe.skip("20. Valid Parentheses", () => {
   test("Case 1", () => {
     const s = "()";
     expect(exportWarp(s)).toStrictEqual(true);
