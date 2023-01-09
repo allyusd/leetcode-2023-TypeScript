@@ -13,13 +13,13 @@ function maxProfit(prices: number[]): number {
   for (let i = 0; i < prices.length; i++) {
     // 過了第一天，知道最高價格跟今天的差價
     if (maxIndex > i) {
-      let diff = prices[maxIndex] - prices[i];
+      const diff = prices[maxIndex] - prices[i];
       if (diff > profit) {
         profit = diff;
       }
       continue;
     }
-    
+
     // 最高價跟最低價的差價比目前的小，結束
     if (minIndex < maxIndex) {
       if (prices[maxIndex] - prices[minIndex] < profit) {
@@ -38,7 +38,7 @@ function maxProfit(prices: number[]): number {
         minIndex = j;
       }
 
-      let diff = prices[j] - prices[i];
+      const diff = prices[j] - prices[i];
       if (diff > profit) {
         profit = diff;
       }

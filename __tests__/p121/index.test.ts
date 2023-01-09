@@ -1,6 +1,6 @@
 import { exportWarp } from "../../src/p121";
-import { prices1 } from "./casedata1";
-import { prices2 } from "./casedata2";
+import { prices1 } from "./case1.data";
+import { prices2 } from "./case2.data";
 
 describe("121. Best Time to Buy and Sell Stock", () => {
   test.each([

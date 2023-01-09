@@ -10,7 +10,7 @@ function maxProfit(prices: number[]): number {
 
   for (let i = 0; i < prices.length; i++) {
     for (let j = i; j < prices.length; j++) {
-      let diff = prices[j] - prices[i];
+      const diff = prices[j] - prices[i];
       if (diff > profit) {
         profit = diff;
       }
