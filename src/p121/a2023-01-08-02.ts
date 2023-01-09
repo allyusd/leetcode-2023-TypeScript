@@ -4,10 +4,11 @@ export function exportWarp(prices: number[]): number {
 
 // 2023-01-08
 // 121. Best Time to Buy and Sell Stock
+// Time Limit Exceeded
 function maxProfit(prices: number[]): number {
   let profit = 0;
   let maxIndex = 0;
-  let minIndex = Number.MAX_VALUE;
+  let minIndex = 0;
 
   for (let i = 0; i < prices.length; i++) {
     // 過了第一天，知道最高價格跟今天的差價
@@ -18,7 +19,7 @@ function maxProfit(prices: number[]): number {
       }
       continue;
     }
-    
+
     // 最高價跟最低價的差價比目前的小，結束
     if (minIndex < maxIndex) {
       if (prices[maxIndex] - prices[minIndex] < profit) {
@@ -27,7 +28,7 @@ function maxProfit(prices: number[]): number {
     }
 
     maxIndex = 0;
-    minIndex = Number.MAX_VALUE;
+    minIndex = 0;
     for (let j = i; j < prices.length; j++) {
       if (prices[j] > prices[maxIndex]) {
         maxIndex = j;
