@@ -2,45 +2,24 @@ export function exportWarp(prices: number[]): number {
   return maxProfit(prices);
 }
 
-// 2023-01-08
+// 2023-01-09
 // 121. Best Time to Buy and Sell Stock
+// 透過 ChatGPT 提供的想法，把過去最低價格記下，就不需要第二個迴圈
 function maxProfit(prices: number[]): number {
   let profit = 0;
-  let maxIndex = 0;
-  let minIndex = Number.MAX_VALUE;
+
+  // 過去的最低價格
+  let minPrice = Number.MAX_VALUE;
 
   for (let i = 0; i < prices.length; i++) {
-    // 過了第一天，知道最高價格跟今天的差價
-    if (maxIndex > i) {
-      let diff = prices[maxIndex] - prices[i];
-      if (diff > profit) {
-        profit = diff;
-      }
-      continue;
-    }
-    
-    // 最高價跟最低價的差價比目前的小，結束
-    if (minIndex < maxIndex) {
-      if (prices[maxIndex] - prices[minIndex] < profit) {
-        break;
-      }
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
     }
 
-    maxIndex = 0;
-    minIndex = Number.MAX_VALUE;
-    for (let j = i; j < prices.length; j++) {
-      if (prices[j] > prices[maxIndex]) {
-        maxIndex = j;
-      }
+    let diff = prices[i] - minPrice;
 
-      if (prices[j] < prices[minIndex]) {
-        minIndex = j;
-      }
-
-      let diff = prices[j] - prices[i];
-      if (diff > profit) {
-        profit = diff;
-      }
+    if (diff > profit) {
+      profit = diff;
     }
   }
 
