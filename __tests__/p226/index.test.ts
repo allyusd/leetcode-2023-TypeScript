@@ -21,7 +21,7 @@ describe("226. Invert Binary Tree", () => {
     ],
   ])("case", (root: (number | null)[], expected) => {
     // console.log(TreeNode.formArray(root));
-    const result = TreeNode.toArray(exportWarp(TreeNode.formArray(root)), true);
+    const result = TreeNode.toArray(exportWarp(TreeNode.formArray(root)));
     // console.log(result);
     expect(result).toStrictEqual(expected);
   });
