@@ -11,7 +11,15 @@ describe("226. Invert Binary Tree", () => {
       [2, 3, 1],
     ],
     [[], []],
-  ])("case", (root, expected) => {
+    [
+      [4, 2, 7, null, 3, 6, 9],
+      [4, 7, 2, 9, 6, 3],
+    ],
+    [
+      [4, 2, 7, 1, null, 6, 9],
+      [4, 7, 2, 9, 6, null, 1],
+    ],
+  ])("case", (root: (number | null)[], expected) => {
     // console.log(TreeNode.formArray(root));
     const result = TreeNode.toArray(exportWarp(TreeNode.formArray(root)), true);
     // console.log(result);

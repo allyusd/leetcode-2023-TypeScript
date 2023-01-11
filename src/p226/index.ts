@@ -15,7 +15,7 @@ export class TreeNode {
 
   // JavaScript build Incomplete Binary Tree from an array
   // https://stackoverflow.com/a/62221949/2613884
-  insert(array: number[]): TreeNode | null {
+  insert(array: (number | null)[]): TreeNode | null {
     if (array.length === 0) {
       return this;
     }
@@ -29,8 +29,9 @@ export class TreeNode {
       }
       for (const side of ["left", "right"]) {
         if (!(current as any)[side]) {
-          if (array[i] !== null) {
-            (current as any)[side] = new TreeNode(array[i]);
+          const val = array[i];
+          if (val !== null) {
+            (current as any)[side] = new TreeNode(val);
           }
           i++;
           if (i >= array.length) {
@@ -45,23 +46,28 @@ export class TreeNode {
     return this;
   }
 
-  static formArray(array: number[]): TreeNode | null {
+  static formArray(array: (number | null)[]): TreeNode | null {
     if (array.length === 0) {
       return null;
     }
 
-    const root = new TreeNode(array.shift());
+    const val = array.shift();
+    if (val === null) {
+      return null;
+    }
+
+    const root = new TreeNode(val);
     root.insert(array);
 
     return root;
   }
 
-  static toArray(node: TreeNode | null, isRoot = true): number[] {
+  static toArray(node: TreeNode | null, isRoot = true): (number | null)[] {
     if (node === null) {
       return [];
     }
 
-    let output: number[] = [];
+    let output: (number | null)[] = [];
 
     if (isRoot) {
       output.push(node.val);
@@ -72,6 +78,10 @@ export class TreeNode {
     }
 
     if (node.right) {
+      if (!node.left) {
+        output.push(null);
+      }
+
       output.push(node.right.val);
     }
 
@@ -103,20 +113,13 @@ function invertTree(root: TreeNode | null): TreeNode | null {
     return null;
   }
 
-  // const output = new TreeNode(1);
-  // output.left = new TreeNode(2);
-  // output.right = new TreeNode(3);
-  // output.left.left = new TreeNode(4);
-  // output.left.right = new TreeNode(5);
+  // swap
+  const tmp = root.left;
+  root.left = root.right;
+  root.right = tmp;
 
-  // 4,7,2,9,6,3,1
-  const output = new TreeNode(4);
-  output.left = new TreeNode(7);
-  output.right = new TreeNode(2);
-  output.left.left = new TreeNode(9);
-  output.left.right = new TreeNode(6);
-  output.right.left = new TreeNode(3);
-  output.right.right = new TreeNode(1);
+  invertTree(root.left);
+  invertTree(root.right);
 
-  return output;
+  return root;
 }
