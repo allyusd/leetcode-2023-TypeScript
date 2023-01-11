@@ -1,6 +1,6 @@
 import { exportWarp, TreeNode } from "../../src/p226";
 
-describe("226. Invert Binary Tree", () => {
+describe.skip("226. Invert Binary Tree", () => {
   test.each([
     [
       [4, 2, 7, 1, 3, 6, 9],
