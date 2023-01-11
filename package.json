@@ -13,8 +13,8 @@
     "lint": "eslint . --ext .ts --fix",
     "lint-without-fix": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
-    "test": "jest",
-    "test-watch": "jest --watch"
+    "test": "jest --watch",
+    "test-without-watch": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
