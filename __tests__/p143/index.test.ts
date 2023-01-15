@@ -10,6 +10,11 @@ describe("143. Reorder List", () => {
       [1, 2, 3, 4, 5],
       [1, 5, 2, 4, 3],
     ],
+    // Wrong Answer
+    [
+      [1,2],
+      [1,2],
+    ],
   ])("case", (head, expected) => {
     const node = ListNode.fromArray(head);
     // console.log(node);
