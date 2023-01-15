@@ -12,8 +12,8 @@ describe("143. Reorder List", () => {
     ],
     // Wrong Answer
     [
-      [1,2],
-      [1,2],
+      [1, 2],
+      [1, 2],
     ],
   ])("case", (head, expected) => {
     const node = ListNode.fromArray(head);
