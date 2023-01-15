@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6292";
+import { exportWarp } from "../../src/p2536";
 
-describe("6292. Increment Submatrices by One", () => {
+describe("2536. Increment Submatrices by One", () => {
   test.each([
     [
       3,

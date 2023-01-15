@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6291";
+import { exportWarp } from "../../src/p2535";
 
-describe("6291. Difference Between Element Sum and Digit Sum of an Array", () => {
+describe("2535. Difference Between Element Sum and Digit Sum of an Array", () => {
   test.each([
     [[1, 15, 6, 3], 9],
     [[1, 2, 3, 4], 0],

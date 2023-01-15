@@ -16,7 +16,7 @@ function initialMatrix(size: number): number[][] {
 }
 
 // 2023-01-14
-// 6292. Increment Submatrices by One
+// 2536. Increment Submatrices by One
 // Constraints:
 // 1 <= n <= 500
 // 1 <= queries.length <= 104

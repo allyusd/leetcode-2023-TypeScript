@@ -3,7 +3,7 @@ export function exportWarp(nums: number[]): number {
 }
 
 // 2023-01-14
-// 6291. Difference Between Element Sum and Digit Sum of an Array
+// 2535. Difference Between Element Sum and Digit Sum of an Array
 // Constraints:
 // 1 <= nums.length <= 2000
 // 1 <= nums[i] <= 2000
