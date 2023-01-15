@@ -13,10 +13,11 @@ describe("2. Add Two Numbers", () => {
       [9, 9, 9, 9],
       [8, 9, 9, 9, 0, 0, 0, 1],
     ],
-  ])("case", (head, expected) => {
-    const node1 = ListNode.fromArray(head);
-    const node2 = ListNode.fromArray(head);
-    // console.log(node);
+  ])("case", (l1, l2, expected) => {
+    const node1 = ListNode.fromArray(l1);
+    const node2 = ListNode.fromArray(l2);
+    // console.log(node1);
+    // console.log(node2);
     // console.log(ListNode.toArray(node));
     const result = exportWarp(node1, node2);
     const array = ListNode.toArray(result);

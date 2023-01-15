@@ -68,6 +68,7 @@ export class ListNode {
 
 // 2023-01-15
 // 2. Add Two Numbers
+// Accepted
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -80,5 +81,61 @@ export class ListNode {
  * }
  */
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-  return null;
+  if (l1 === null && l2 === null) {
+    return null;
+  }
+
+  if (l1 === null) {
+    return l2;
+  }
+
+  if (l2 === null) {
+    return l1;
+  }
+
+  let head: ListNode | null = null;
+  let preNode: ListNode | null = null;
+  let overFlow = 0;
+
+  let n1: ListNode | null = l1;
+  let n2: ListNode | null = l2;
+  while (n1 !== null || n2 !== null) {
+    const v1 = n1 === null ? 0 : n1.val;
+    const v2 = n2 === null ? 0 : n2.val;
+    let v = v1 + v2 + overFlow;
+
+    if (v >= 10) {
+      overFlow = 1;
+      v = v - 10;
+    } else {
+      overFlow = 0;
+    }
+
+    const node = new ListNode(v);
+
+    if (head === null) {
+      head = node;
+    }
+
+    if (preNode !== null) {
+      preNode.next = node;
+    }
+
+    preNode = node;
+
+    n1 = n1 === null ? null : n1.next;
+    n2 = n2 === null ? null : n2.next;
+  }
+
+  if (overFlow !== 0) {
+    const node = new ListNode(overFlow);
+
+    if (preNode !== null) {
+      preNode.next = node;
+    }
+
+    preNode = node;
+  }
+
+  return head;
 }
