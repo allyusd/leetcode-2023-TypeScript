@@ -68,7 +68,7 @@ export class ListNode {
 
 // 2023-01-15
 // 143. Reorder List
-// Wrong Answer
+// Accepted
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -111,8 +111,8 @@ function reorderList(head: ListNode | null): void {
   const mid = Math.floor(nodeArray.length / 2);
   // console.log(mid);
   for (let i = 0; i < mid; i++) {
+    beginIndex = i;
     if (i !== 0) {
-      beginIndex = i;
       preNode.next = nodeArray[i];
       preNode = nodeArray[i];
     }
