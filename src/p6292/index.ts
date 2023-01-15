@@ -2,7 +2,7 @@ export function exportWarp(n: number, queries: number[][]): number[][] {
   return rangeAddQueries(n, queries);
 }
 
-function initialMatrix (size: number): number[][] {
+function initialMatrix(size: number): number[][] {
   const matrix: number[][] = [];
 
   for (let y = 0; y < size; y++) {
@@ -13,7 +13,7 @@ function initialMatrix (size: number): number[][] {
   }
 
   return matrix;
-};
+}
 
 // 2023-01-14
 // 6292. Increment Submatrices by One
@@ -26,8 +26,26 @@ function rangeAddQueries(n: number, queries: number[][]): number[][] {
   const matrix: number[][] = initialMatrix(n);
 
   queries.forEach((q: number[]) => {
-    for (let y = q[1]; y <= q[3]; y++) {
-      for (let x = q[0]; x <= q[2]; x++) {
+    let row1 = q[0];
+    let row2 = q[2];
+    let col1 = q[1];
+    let col2 = q[3];
+
+    // 先把 x, y 依照大小排好
+    if (row1 > row2) {
+      const temp = row1;
+      row1 = row2;
+      row2 = temp;
+    }
+
+    if (col1 > col2) {
+      const temp = col1;
+      col1 = col2;
+      col2 = temp;
+    }
+
+    for (let y = col1; y <= col2; y++) {
+      for (let x = row1; x <= row2; x++) {
         matrix[y][x]++;
       }
     }
