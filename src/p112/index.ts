@@ -101,6 +101,7 @@ export class TreeNode {
 
 // 2023-01-16
 // 112. Path Sum
+// Accepted
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -114,7 +115,49 @@ export class TreeNode {
  *     }
  * }
  */
-
 function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+  if (root === null) {
+    return false;
+  }
+
+  // 節點和之前節點的總和
+  class TreeNodeInfo {
+    node: TreeNode;
+    sum: number;
+
+    constructor(node: TreeNode, sum: number) {
+      this.node = node;
+      this.sum = sum;
+    }
+  }
+
+  // 透過 stack 保留資訊，不使用 queue 是因為 DFS 應該比 BFS 快找到葉節點
+  const stack: TreeNodeInfo[] = [];
+
+  stack.push(new TreeNodeInfo(root, 0));
+
+  while(stack.length > 0) {
+    let info = stack.pop();
+
+    if (info === undefined) {
+        throw new Error("非預期 undefined");
+    }
+
+    const node = info.node;
+    // 葉節點
+    if (node.left === null && node.right === null) {
+      if (info.sum + node.val === targetSum) {
+        return true;
+      }
+    } else {
+      if (node.left !== null) {
+        stack.push(new TreeNodeInfo(node.left, info.sum + node.val));
+      }
+      if (node.right !== null) {
+        stack.push(new TreeNodeInfo(node.right, info.sum + node.val));
+      }
+    }
+  }
+
   return false;
 }
