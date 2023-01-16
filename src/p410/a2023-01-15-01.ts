@@ -22,6 +22,7 @@ function splitArray(nums: number[], k: number): number {
     const sum = sumArray(sub);
     if (sum > maxSum) {
       maxSum = sum;
+      // eslint-disable-next-line  @typescript-eslint/no-unused-vars
       maxSubIndex = i;
     }
   }

@@ -28,9 +28,11 @@ export class TreeNode {
         return this;
       }
       for (const side of ["left", "right"]) {
+        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
         if (!(current as any)[side]) {
           const val = array[i];
           if (val !== null) {
+            // eslint-disable-next-line  @typescript-eslint/no-explicit-any
             (current as any)[side] = new TreeNode(val);
           }
           i++;
@@ -38,7 +40,9 @@ export class TreeNode {
             return this;
           }
         }
+        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
         if ((current as any)[side]) {
+          // eslint-disable-next-line  @typescript-eslint/no-explicit-any
           queue.push((current as any)[side]);
         }
       }
