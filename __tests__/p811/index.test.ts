@@ -9,6 +9,8 @@ describe("811. Subdomain Visit Count", () => {
     ],
   ])("case", (cpdomains, expected) => {
     const result = exportWarp(cpdomains);
-    expect(result).toStrictEqual(expected);
+
+    // You may return the answer in any order.
+    expect(result.sort()).toStrictEqual(expected.sort());
   });
 });
