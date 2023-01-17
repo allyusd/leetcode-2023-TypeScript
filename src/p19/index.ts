@@ -15,14 +15,15 @@ export class ListNode {
     if (array.length === 0) {
       return null;
     }
+    const input = [...array];
 
-    let first = array[0];
+    const first = input.shift();
 
     const head = new ListNode(first);
     let preNode = head;
 
-    while(array.length > 0) {
-      const val = array.shift();
+    while (input.length > 0) {
+      const val = input.shift();
       if (val === undefined) {
         throw new Error("Here is undefined");
       }
@@ -32,7 +33,7 @@ export class ListNode {
       preNode = node;
     }
 
-    return null;
+    return head;
   }
 
   static toArray(head: ListNode | null): number[] {
@@ -42,8 +43,8 @@ export class ListNode {
 
     const array = [];
     array.push(head.val);
-    let next:ListNode = head;
-    while(next.next !== null) {
+    let next: ListNode = head;
+    while (next.next !== null) {
       next = next.next;
       array.push(next.val);
     }
@@ -66,5 +67,43 @@ export class ListNode {
  * }
  */
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-  return null;
+  if (head === null) {
+    return null;
+  }
+
+  let next: ListNode | null = head;
+  let array: ListNode[] = [];
+
+  // console.log(head);
+  while (next !== null) {
+    array.push(next);
+    next = next.next;
+  }
+
+  // console.log(array);
+  array = array.reverse();
+
+  // console.log(n);
+  // console.log(array.length);
+  // 如果要移除的是第一個
+  if (n === array.length) {
+    return head.next;
+  }
+
+  const node = array[n];
+
+  const lastNode = array[0];
+
+  if (node === undefined) {
+    throw new Error("Here is undefined");
+  }
+
+  // 如果要移除的是最後一個
+  if (n === 1) {
+    node.next = null;
+  } else {
+    node.next = lastNode;
+  }
+
+  return head;
 }
