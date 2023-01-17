@@ -123,7 +123,7 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   }
 
   // 排序
-  numberArray.sort();
+  numberArray.sort((a, b) => a - b);
 
   // 把 array 轉回 Linked list
   return Converter.fromArray(numberArray);
