@@ -136,11 +136,11 @@ function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
 
   stack.push(new TreeNodeInfo(root, 0));
 
-  while(stack.length > 0) {
-    let info = stack.pop();
+  while (stack.length > 0) {
+    const info = stack.pop();
 
     if (info === undefined) {
-        throw new Error("非預期 undefined");
+      throw new Error("非預期 undefined");
     }
 
     const node = info.node;
