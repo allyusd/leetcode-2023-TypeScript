@@ -54,6 +54,7 @@ export class ListNode {
 }
 
 // 2023-01-17
+// Accepted
 // 19. Remove Nth Node From End of List
 /**
  * Definition for singly-linked list.
@@ -92,7 +93,7 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 
   const node = array[n];
 
-  const lastNode = array[0];
+  const lastNode = array[n - 2];
 
   if (node === undefined) {
     throw new Error("Here is undefined");
