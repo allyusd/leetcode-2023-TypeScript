@@ -1,3 +1,5 @@
+import { StringHelper } from "./stringHelper";
+
 export function exportWarp(s: string, t: string): boolean {
   return isAnagram(s, t);
 }
@@ -16,7 +18,7 @@ function isAnagram(s: string, t: string): boolean {
       return false;
     }
 
-    t = t.substring(0, index) + t.substring(index + 1);
+    t = StringHelper.removeCharByIndex(t, index);
   }
 
   return true;
