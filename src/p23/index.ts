@@ -115,8 +115,8 @@ class Converter {
 
 function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   // 把 linked list 轉成 array 並且 合併
-  let numberArray:number[] = [];
-  for (let list of lists) {
+  let numberArray: number[] = [];
+  for (const list of lists) {
     if (list !== null) {
       numberArray = numberArray.concat(Converter.toArray(list));
     }
@@ -127,4 +127,4 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 
   // 把 array 轉回 Linked list
   return Converter.fromArray(numberArray);
-};
+}

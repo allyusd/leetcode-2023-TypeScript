@@ -2,11 +2,21 @@ import { exportWarp, ListNode } from "../../src/p23";
 
 describe("23. Merge k Sorted Lists", () => {
   test.each([
-    [[[1,4,5],[1,3,4],[2,6]], [1,1,2,3,4,4,5,6]],
+    [
+      [
+        [1, 4, 5],
+        [1, 3, 4],
+        [2, 6],
+      ],
+      [1, 1, 2, 3, 4, 4, 5, 6],
+    ],
     [[], []],
     [[[]], []],
     // Wrong Answer
-    [[[],[-1,5,11],[],[6,10]], [-1,5,6,10,11]],
+    [
+      [[], [-1, 5, 11], [], [6, 10]],
+      [-1, 5, 6, 10, 11],
+    ],
   ])("case", (lists, expected) => {
     // 轉換正確
     if (lists.length > 0) {
@@ -15,7 +25,7 @@ describe("23. Merge k Sorted Lists", () => {
 
     const listArray: Array<ListNode | null> = [];
 
-    for (let list of lists) {
+    for (const list of lists) {
       listArray.push(ListNode.fromArray(list));
     }
 
