@@ -4,6 +4,7 @@ export function exportWarp(image: number[][], sr: number, sc: number, color: num
 
 // 2023-01-19
 // 733. Flood Fill
+// Official Solution
 function floodFill(image: number[][], sr: number, sc: number, color: number): number[][] {
   const target = image[sr][sc];
 
@@ -11,23 +12,29 @@ function floodFill(image: number[][], sr: number, sc: number, color: number): nu
     return image;
   }
 
-  const fillColor = (sr: number, sc: number, target: number, color: number) => {
-    if (sr >= 0 && sr < image.length && sc >= 0 && sc < image[0].length) {
-      if (image[sr][sc] === target) {
-        image[sr][sc] = color;
-        autoFill(sr, sc, target, color);
-      }
-    }
-  };
-
-  const autoFill = (sr: number, sc: number, target: number, color: number) => {
-    fillColor(sr - 1, sc, target, color);
-    fillColor(sr, sc + 1, target, color);
-    fillColor(sr + 1, sc, target, color);
-    fillColor(sr, sc - 1, target, color);
-  };
-
-  fillColor(sr, sc, target, color);
+  fds(image, sr, sc, color, target);
 
   return image;
+}
+
+function fds(image: number[][], sr: number, sc: number, color: number, target: number) {
+  if (image[sr][sc] === target) {
+    image[sr][sc] = color;
+
+    if (sr - 1 >= 0) {
+      fds(image, sr - 1, sc, color, target);
+    }
+
+    if (sc - 1 >= 0) {
+      fds(image, sr, sc - 1, color, target);
+    }
+
+    if (sr + 1 < image.length) {
+      fds(image, sr + 1, sc, color, target);
+    }
+
+    if (sc + 1 < image[0].length) {
+      fds(image, sr, sc + 1, color, target);
+    }
+  }
 }
