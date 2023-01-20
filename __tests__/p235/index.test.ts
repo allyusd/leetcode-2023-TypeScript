@@ -14,8 +14,8 @@ describe("235. Lowest Common Ancestor of a Binary Search Tree", () => {
     const nodeP = TreeHelper.findNode(tree, p);
     const nodeQ = TreeHelper.findNode(tree, q);
     const result = exportWarp(tree, nodeP, nodeQ);
-    const array = TreeHelper.toArray(result);
+    // const array = TreeHelper.toArray(result);
 
-    expect(array).toStrictEqual(expected);
+    expect(result?.val).toStrictEqual(expected);
   });
 });
