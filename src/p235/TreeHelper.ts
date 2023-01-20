@@ -12,17 +12,17 @@ export class TreeHelper {
     }
 
     const root = new TreeNode(array[0]);
-    const queue: TreeNode[] = [root]
+    const queue: TreeNode[] = [root];
 
     let index = 1;
-    while(queue.length > 0) {
+    while (queue.length > 0) {
       const current = queue.shift();
       if (current === undefined) {
-        throw new Error('Here is undefined');
+        throw new Error("Here is undefined");
       }
 
       if (current.left === null) {
-        let val = array[index];
+        const val = array[index];
         if (val != null) {
           current.left = new TreeNode(val);
           queue.push(current.left);
@@ -31,7 +31,7 @@ export class TreeHelper {
       }
 
       if (current.right === null) {
-        let val = array[index];
+        const val = array[index];
         if (val != null) {
           current.right = new TreeNode(val);
           queue.push(current.right);
@@ -56,7 +56,7 @@ export class TreeHelper {
     while (queue.length > 0) {
       const current = queue.shift();
       if (current === undefined) {
-        throw new Error('Here is undefined');
+        throw new Error("Here is undefined");
       }
 
       if (current.left !== null) {
@@ -74,7 +74,7 @@ export class TreeHelper {
       }
     }
 
-    while (array[array.length -1] === null) {
+    while (array[array.length - 1] === null) {
       array.pop();
     }
 
@@ -88,7 +88,7 @@ export class TreeHelper {
 
     const stack: TreeNode[] = [root];
 
-    while(stack.length > 0) {
+    while (stack.length > 0) {
       const current = stack.pop();
       if (current === undefined) {
         throw new Error("Here is undefined");
