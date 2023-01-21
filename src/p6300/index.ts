@@ -42,8 +42,10 @@ function getCommon(nums1: number[], nums2: number[]): number {
     }
 
     if (i !== 0) {
-      stack.push(array.slice(0, i));
-      // console.log(`push left`);
+      if (array[i - 1] <= nums2[nums2.length - 1]) {
+        stack.push(array.slice(0, i));
+        // console.log(`push left`);
+      }
     }
   }
 
