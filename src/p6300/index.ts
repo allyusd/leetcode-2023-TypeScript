@@ -15,15 +15,8 @@ function getCommon(nums1: number[], nums2: number[]): number {
   let minCommon = Number.MAX_VALUE;
   let stack: number[][] = [nums1];
 
-  let debug = 0;
   while (stack.length > 0) {
-    debug++;
-
-    if (debug > 5) {
-      break;
-    }
-
-    const array: number[] | undefined = stack.shift();
+    const array: number[] | undefined = stack.pop();
 
     // console.log(`array: ${array}`);
     if (array === undefined) {
@@ -43,7 +36,7 @@ function getCommon(nums1: number[], nums2: number[]): number {
       // console.log(`includes`);
     } else {
       if (i !== array.length - 1) {
-        stack.push(array.slice(i));
+        stack.push(array.slice(i + 1));
         // console.log(`push right`);
       }
     }
