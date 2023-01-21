@@ -11,17 +11,48 @@ function getCommon(nums1: number[], nums2: number[]): number {
     nums2 = tmp;
   }
 
-  while (nums1.length > 0) {
-    if (nums2.includes(nums1[0])) {
-      return nums1[0];
-    }
+  let hasCommon = false;
+  let minCommon = Number.MAX_VALUE;
+  let stack: number[][] = [nums1];
 
-    if (nums1[0] > nums2[nums2.length - 1]) {
+  let debug = 0;
+  while (stack.length > 0) {
+    debug++;
+
+    if (debug > 5) {
       break;
     }
 
-    nums1.shift();
+    const array: number[] | undefined = stack.shift();
+
+    // console.log(`array: ${array}`);
+    if (array === undefined) {
+      throw new Error(`undefined`);
+    }
+
+    const i = Math.floor(array.length / 2);
+    // console.log(`i: ${i}`);
+    // console.log(`length: ${array.length}`);
+
+    if (nums2.includes(array[i])) {
+      if (array[i] < minCommon) {
+        minCommon = array[i];
+      }
+      hasCommon = true;
+      stack = [];
+      // console.log(`includes`);
+    } else {
+      if (i !== array.length - 1) {
+        stack.push(array.slice(i));
+        // console.log(`push right`);
+      }
+    }
+
+    if (i !== 0) {
+      stack.push(array.slice(0, i));
+      // console.log(`push left`);
+    }
   }
 
-  return -1;
+  return hasCommon ? minCommon : -1;
 }
