@@ -36,13 +36,15 @@ function getCommon(nums1: number[], nums2: number[]): number {
       // console.log(`includes`);
     } else {
       if (i !== array.length - 1) {
-        stack.push(array.slice(i + 1));
-        // console.log(`push right`);
+        if (!(array[i + 1] > nums2[nums2.length - 1] || array[array.length - 1] < nums2[0])) {
+          stack.push(array.slice(i + 1));
+          // console.log(`push right`);
+        }
       }
     }
 
     if (i !== 0) {
-      if (array[i - 1] <= nums2[nums2.length - 1]) {
+      if (!(array[0] > nums2[nums2.length - 1] || array[i - 1] < nums2[0])) {
         stack.push(array.slice(0, i));
         // console.log(`push left`);
       }
