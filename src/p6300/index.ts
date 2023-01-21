@@ -16,6 +16,10 @@ function getCommon(nums1: number[], nums2: number[]): number {
       return nums1[0];
     }
 
+    if (nums1[0] > nums2[nums2.length - 1]) {
+      break;
+    }
+
     nums1.shift();
   }
 
