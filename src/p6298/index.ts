@@ -5,7 +5,14 @@ export function exportWarp(s: string, target: string): boolean {
 // 2023-01-21
 // 6298. Apply Bitwise Operations to Make Strings Equal
 function makeStringsEqual(s: string, target: string): boolean {
-  return target.includes("1");
+  const c1 = s.includes("1");
+  const c2 = target.includes("1");
+
+  if (c1 === false && c2 === false) {
+    return true;
+  }
+
+  return !(c1 === false || c2 === false);
 }
 
 // 0 OR 0 = 0
