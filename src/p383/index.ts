@@ -7,7 +7,6 @@ export function exportWarp(ransomNote: string, magazine: string): boolean {
 // 2023-01-28
 // 383. Ransom Note
 function canConstruct(ransomNote: string, magazine: string): boolean {
-
   while (ransomNote.length > 0) {
     if (magazine.length === 0) {
       return false;
