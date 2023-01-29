@@ -1,6 +1,7 @@
 import { exportWarp } from "../../src/p315";
 import { nums1 } from "./case1.data";
 import { expected1 } from "./case1.expected";
+import { nums2 } from "./case2.data";
 
 describe("315. Count of Smaller Numbers After Self", () => {
   test.each([
@@ -16,6 +17,11 @@ describe("315. Count of Smaller Numbers After Self", () => {
     // Time Limit Exceeded
     [
       nums1,
+      expected1,
+    ],
+    // Time Limit Exceeded
+    [
+      nums2,
       expected1,
     ],
   ])("case %#", (nums, expected) => {
