@@ -10,7 +10,7 @@ function countSmaller(nums: number[]): number[] {
   for (let i = 0; i < nums.length; i++) {
     output[i] = 0;
 
-    if (i > 0 && nums[i] === nums[i-1]) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
       output[i] = output[i - 1];
       continue;
     }

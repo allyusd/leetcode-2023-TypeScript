@@ -15,15 +15,9 @@ describe("315. Count of Smaller Numbers After Self", () => {
       [0, 0],
     ],
     // Time Limit Exceeded
-    [
-      nums1,
-      expected1,
-    ],
+    [nums1, expected1],
     // Time Limit Exceeded
-    [
-      nums2,
-      expected1,
-    ],
+    [nums2, expected1],
   ])("case %#", (nums, expected) => {
     const result = exportWarp(nums);
     // console.log(result);
