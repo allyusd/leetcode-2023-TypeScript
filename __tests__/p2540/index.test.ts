@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6300";
+import { exportWarp } from "../../src/p2540";
 
-describe("6300. Minimum Common Value", () => {
+describe("2540. Minimum Common Value", () => {
   test.each([
     [[1, 2, 3], [2, 4], 2],
     [[1, 2, 3, 6], [2, 3, 4, 5], 2],

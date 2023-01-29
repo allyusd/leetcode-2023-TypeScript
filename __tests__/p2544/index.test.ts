@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6296";
+import { exportWarp } from "../../src/p2544";
 
-describe("6296. Alternating Digit Sum", () => {
+describe("2544. Alternating Digit Sum", () => {
   test.each([
     [521, 4],
     [111, 1],

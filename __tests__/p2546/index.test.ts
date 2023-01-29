@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6298";
+import { exportWarp } from "../../src/p2546";
 
-describe("6298. Apply Bitwise Operations to Make Strings Equal", () => {
+describe("2546. Apply Bitwise Operations to Make Strings Equal", () => {
   test.each([
     ["1010", "0110", true],
     ["11", "00", false],

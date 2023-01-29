@@ -3,7 +3,7 @@ export function exportWarp(n: number): number {
 }
 
 // 2023-01-21
-// 6296. Alternating Digit Sum
+// 2544. Alternating Digit Sum
 function alternateDigitSum(n: number): number {
   const str = n.toString();
   // console.log(str);

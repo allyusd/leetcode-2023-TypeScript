@@ -3,7 +3,7 @@ export function exportWarp(nums1: number[], nums2: number[]): number {
 }
 
 // 2023-01-21
-// 6300. Minimum Common Value
+// 2540. Minimum Common Value
 function getCommon(nums1: number[], nums2: number[]): number {
   if (nums1.length > nums2.length) {
     const tmp = nums1;

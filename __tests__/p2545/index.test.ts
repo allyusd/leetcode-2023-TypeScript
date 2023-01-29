@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6297";
+import { exportWarp } from "../../src/p2545";
 
-describe("6297. Sort the Students by Their Kth Score", () => {
+describe("2545. Sort the Students by Their Kth Score", () => {
   test.each([
     [
       [

@@ -3,7 +3,7 @@ export function exportWarp(s: string, target: string): boolean {
 }
 
 // 2023-01-21
-// 6298. Apply Bitwise Operations to Make Strings Equal
+// 2546. Apply Bitwise Operations to Make Strings Equal
 function makeStringsEqual(s: string, target: string): boolean {
   const c1 = s.includes("1");
   const c2 = target.includes("1");

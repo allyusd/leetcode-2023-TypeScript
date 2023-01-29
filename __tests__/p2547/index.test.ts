@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6299";
+import { exportWarp } from "../../src/p2547";
 
-describe("6299. Minimum Cost to Split an Array", () => {
+describe("2547. Minimum Cost to Split an Array", () => {
   test.each([
     [[1, 2, 1, 2, 1, 3, 3], 2, 8],
     [[1, 2, 1, 2, 1], 2, 6],
