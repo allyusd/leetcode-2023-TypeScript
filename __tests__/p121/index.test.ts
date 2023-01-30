@@ -2,7 +2,7 @@ import { exportWarp } from "../../src/p121";
 import { prices1 } from "./case1.data";
 import { prices2 } from "./case2.data";
 
-describe.skip("121. Best Time to Buy and Sell Stock", () => {
+describe("121. Best Time to Buy and Sell Stock", () => {
   test.each([
     [[7, 1, 5, 3, 6, 4], 5],
     [[7, 6, 4, 3, 1], 0],

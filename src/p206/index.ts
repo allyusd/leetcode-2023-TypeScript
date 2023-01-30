@@ -75,7 +75,7 @@ function reverseList(head: ListNode | null): ListNode | null {
 
   let preNode: ListNode = newHead;
   while (stack.length > 0) {
-    console.log(`${stack.length}`);
+    // console.log(`${stack.length}`);
     const node = stack.pop();
     if (node !== undefined) {
       preNode.next = node;
