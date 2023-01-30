@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6337";
+import { exportWarp } from "../../src/p2549";
 
-describe("6337. Count Distinct Numbers on Board", () => {
+describe("2549. Count Distinct Numbers on Board", () => {
   test.each([
     [5, 4],
     [3, 2],

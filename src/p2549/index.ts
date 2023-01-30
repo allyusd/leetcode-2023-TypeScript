@@ -3,7 +3,7 @@ export function exportWarp(n: number): number {
 }
 
 // 2023-01-28
-// 6337. Count Distinct Numbers on Board
+// 2550. Count Distinct Numbers on Board
 function distinctIntegers(n: number): number {
   const board: number[] = [n];
   let flag = true;

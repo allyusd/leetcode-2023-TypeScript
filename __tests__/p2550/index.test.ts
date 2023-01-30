@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6338";
+import { exportWarp } from "../../src/p2550";
 
-describe("6338. Count Collisions of Monkeys on a Polygon", () => {
+describe("2550. Count Collisions of Monkeys on a Polygon", () => {
   test.each([
     [3, 6],
     [4, 14],
