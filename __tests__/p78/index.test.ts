@@ -1,4 +1,5 @@
 import { exportWarp } from "../../src/p78";
+import { arrayContainEqualWithoutOrder } from "../jestHelper/jestHelper";
 
 describe("78. Subsets", () => {
   test.each([
@@ -9,6 +10,9 @@ describe("78. Subsets", () => {
     [[0], [[], [0]]],
   ])("case %#", (nums, expected) => {
     const result = exportWarp(nums);
-    expect(result).toStrictEqual(expected);
+    // expect(result).toStrictEqual(expected);
+    console.log(result);
+    console.log(expected);
+    arrayContainEqualWithoutOrder(result, expected);
   });
 });
