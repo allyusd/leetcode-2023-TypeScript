@@ -13,15 +13,13 @@ function isVowelWord(str: string): boolean {
 // Time Limit Exceeded
 function vowelStrings(words: string[], queries: number[][]): number[] {
   const output: number[] = [];
-
-  const tmp: number[] = [];
-
-  for (let w of words) {
-    tmp.push(isVowelWord(w) ? 1: 0);
-  }
-
   for (let i of queries) {
-    const count = tmp.slice(i[0], i[1] + 1).reduce((a, b) => a + b, 0);
+    let count = 0;
+    for (let j = i[0]; j <= i[1]; j++) {
+      if (isVowelWord(words[j])) {
+        count++;
+      }
+    }
     output.push(count);
   }
 
