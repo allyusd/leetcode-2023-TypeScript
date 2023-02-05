@@ -10,6 +10,7 @@ function isVowelWord(str: string): boolean {
 
 // 2023-02-04
 // 6347. Count Vowel Strings in Ranges
+// Time Limit Exceeded
 function vowelStrings(words: string[], queries: number[][]): number[] {
   const output: number[] = [];
 
