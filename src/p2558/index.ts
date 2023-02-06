@@ -3,7 +3,7 @@ export function exportWarp(gifts: number[], k: number): number {
 }
 
 // 2023-02-04
-// 6348. Take Gifts From the Richest Pile
+// 2558. Take Gifts From the Richest Pile
 function pickGifts(gifts: number[], k: number): number {
   for (let i = 0; i < k; i++) {
     const max = Math.max(...gifts);

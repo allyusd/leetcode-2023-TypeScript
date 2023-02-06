@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6347";
+import { exportWarp } from "../../src/p2559";
 
-describe("6347. Count Vowel Strings in Ranges", () => {
+describe("2559. Count Vowel Strings in Ranges", () => {
   test.each([
     [["aba","bcb","ece","aa","e"], [[0,2],[1,4],[1,1]], [2,3,0]],
     [["a","e","i"], [[0,2],[0,1],[2,2]], [3,2,1]],
