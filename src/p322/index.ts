@@ -15,14 +15,19 @@ function coinChange(coins: number[], amount: number): number {
   });
 
   let count = 0;
+  let target = amount;
   for (let c of order) {
-    count += Math.floor(amount / c);
-    amount = amount % c;
-    console.log(amount % c);
+    count += Math.floor(target / c);
+    target = target % c;
+    // console.log(amount % c);
   }
 
-  if (amount !== 0) {
-    return -1;
+  if (target !== 0) {
+    if (order.length > 1) {
+      return coinChange(order.slice(1, order.length), amount);
+    } else {
+      return -1;
+    }
   }
 
   return count;
