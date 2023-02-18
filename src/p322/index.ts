@@ -16,7 +16,7 @@ function coinChange(coins: number[], amount: number): number {
 
   let count = 0;
   let target = amount;
-  for (let c of order) {
+  for (const c of order) {
     count += Math.floor(target / c);
     target = target % c;
     // console.log(amount % c);
@@ -31,4 +31,4 @@ function coinChange(coins: number[], amount: number): number {
   }
 
   return count;
-};
+}

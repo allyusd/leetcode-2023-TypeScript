@@ -3,9 +3,9 @@ export function exportWarp(words: string[], queries: number[][]): number[] {
 }
 
 function isVowelWord(str: string): boolean {
-  const vowel = ['a', 'e', 'i', 'o', 'u'];
+  const vowel = ["a", "e", "i", "o", "u"];
 
-  return vowel.includes(str[0]) && vowel.includes(str[str.length - 1])
+  return vowel.includes(str[0]) && vowel.includes(str[str.length - 1]);
 }
 
 // 2023-02-04
@@ -13,7 +13,7 @@ function isVowelWord(str: string): boolean {
 // Time Limit Exceeded
 function vowelStrings(words: string[], queries: number[][]): number[] {
   const output: number[] = [];
-  for (let i of queries) {
+  for (const i of queries) {
     let count = 0;
     for (let j = i[0]; j <= i[1]; j++) {
       if (isVowelWord(words[j])) {
@@ -24,4 +24,4 @@ function vowelStrings(words: string[], queries: number[][]): number[] {
   }
 
   return output;
-};
+}
