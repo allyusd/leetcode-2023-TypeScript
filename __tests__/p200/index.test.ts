@@ -18,7 +18,16 @@ describe("200. Number of Islands", () => {
         ["0", "0", "1", "0", "0"],
         ["0", "0", "0", "1", "1"],
       ],
-      0,
+      3,
+    ],
+    // Wrong Answer
+    [
+      [
+        ["1", "1", "1"],
+        ["0", "1", "0"],
+        ["1", "1", "1"],
+      ],
+      1,
     ],
   ])("case", (grid, expected) => {
     const result = exportWarp(grid);
