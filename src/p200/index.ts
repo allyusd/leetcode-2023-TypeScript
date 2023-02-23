@@ -29,11 +29,17 @@ function numIslands(grid: string[][]): number {
 
     mark(x, y);
 
-    if (x + 1 < grid[0].length && grid[y][x + 1] === "1") {
+    if (x + 1 < grid[0].length && grid[y][x + 1] === "1" && getMark(x + 1, y) !== true) {
       vistIsland(x + 1, y);
     }
-    if (y + 1 < grid.length && grid[y + 1][x] === "1") {
+    if (x - 1 >= 0 && grid[y][x - 1] === "1" && getMark(x - 1, y) !== true) {
+      vistIsland(x - 1, y);
+    }
+    if (y + 1 < grid.length && grid[y + 1][x] === "1" && getMark(x, y + 1) !== true) {
       vistIsland(x, y + 1);
+    }
+    if (y - 1 >= 0 && grid[y - 1][x] === "1" && getMark(x, y - 1) !== true) {
+      vistIsland(x, y - 1);
     }
   };
 
