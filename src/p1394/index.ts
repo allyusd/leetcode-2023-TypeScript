@@ -20,7 +20,7 @@ function findLucky(arr: number[]): number {
 
   let luckyNumber = -1;
   for (const k of frequency.keys()) {
-    if (frequency.get(k) === k) {
+    if (frequency.get(k) === k && k > luckyNumber) {
       luckyNumber = k;
     }
   }
