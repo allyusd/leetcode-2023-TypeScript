@@ -7,7 +7,7 @@ export function exportWarp(s: string): boolean {
 function checkOnesSegment(s: string): boolean {
   let isBreak = false;
 
-  for(let c of s) {
+  for (const c of s) {
     if (isBreak == false && c === "0") {
       isBreak = true;
     }
