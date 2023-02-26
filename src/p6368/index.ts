@@ -8,8 +8,8 @@ function divisibilityArray(word: string, m: number): number[] {
   const output: number[] = [];
 
   for (let i = 0; i < word.length; i++) {
-    const num = Number(word.slice(0, i + 1));
-    const divisibility = num % m === 0 ? 1 : 0;
+    const num = BigInt(word.slice(0, i + 1));
+    const divisibility = num % BigInt(m) === BigInt(0) ? 1 : 0;
     output.push(divisibility);
   }
 
