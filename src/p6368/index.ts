@@ -20,7 +20,7 @@ function divisibilityArray(word: string, m: number): number[] {
   // let end = word.length;
   // let w = word.slice(start, end);
   // console.log(w);
-  
+
   let tmp = 0;
 
   let i = 0;
@@ -29,20 +29,20 @@ function divisibilityArray(word: string, m: number): number[] {
 
   let first = 0;
   let last = 0;
-  while(true) {
-  end = start;
-  start = start - y;
+  while (true) {
+    end = start;
+    start = start - y;
     if (start < 0) {
       start = 0;
     }
 
-    let w = Number(word.slice(start, end));
+    const w = Number(word.slice(start, end));
     // console.log(w);
 
     const p = Math.pow(10, y);
     // console.log(p);
 
-    switch(i) {
+    switch (i) {
       case 0:
         tmp = w;
         break;
@@ -52,7 +52,7 @@ function divisibilityArray(word: string, m: number): number[] {
         tmp += w * last;
         break;
       default:
-        last = first * last % m;
+        last = (first * last) % m;
         tmp += w * last;
         break;
     }
