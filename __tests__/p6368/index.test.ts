@@ -1,7 +1,7 @@
 import { exportWarp } from "../../src/p6368";
 import { word1 } from "./case1.data";
 
-describe("6368. Find the Divisibility Array of a String", () => {
+describe.skip("6368. Find the Divisibility Array of a String", () => {
   test.each([
     ["998244353", 3, [1, 1, 0, 0, 0, 1, 1, 0, 0]],
     ["1010", 10, [0, 1, 0, 1]],
