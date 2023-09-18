@@ -4,15 +4,19 @@ export function exportWarp(nums: number[]): number {
 
 // https://stackoverflow.com/a/17445322/2613884
 function gcd(a: number, b: number) {
-    a = Math.abs(a);
-    b = Math.abs(b);
-    if (b > a) {var temp = a; a = b; b = temp;}
-    while (true) {
-        if (b == 0) return a;
-        a %= b;
-        if (a == 0) return b;
-        b %= a;
-    }
+  a = Math.abs(a);
+  b = Math.abs(b);
+  if (b > a) {
+    var temp = a;
+    a = b;
+    b = temp;
+  }
+  while (true) {
+    if (b == 0) return a;
+    a %= b;
+    if (a == 0) return b;
+    b %= a;
+  }
 }
 
 // 2023-03-04
@@ -20,7 +24,7 @@ function gcd(a: number, b: number) {
 function findValidSplit(nums: number[]): number {
   const product = (arr: number[]): number => {
     return arr.reduce((p, c) => p * c);
-  }
+  };
 
   for (let i = 0; i < nums.length - 1; i++) {
     let pp = product(nums.slice(0, i + 1));
