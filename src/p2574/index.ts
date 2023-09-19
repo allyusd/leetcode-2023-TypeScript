@@ -3,7 +3,7 @@ export function exportWarp(nums: number[]): number[] {
 }
 
 // 2023-02-25
-// 6369. Left and Right Sum Differences
+// 2574. Left and Right Sum Differences
 function leftRigthDifference(nums: number[]): number[] {
   const sum = (arr: number[]) => {
     return arr.reduce((p, c) => p + c);

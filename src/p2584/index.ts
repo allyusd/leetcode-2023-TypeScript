@@ -22,7 +22,7 @@ function gcd(a: number, b: number) {
 }
 
 // 2023-03-04
-// 6309. Split the Array to Make Coprime Products
+// 2584. Split the Array to Make Coprime Products
 function findValidSplit(nums: number[]): number {
   const product = (arr: number[]): number => {
     return arr.reduce((p, c) => p * c);

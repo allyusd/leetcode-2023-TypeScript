@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6307";
+import { exportWarp } from "../../src/p2582";
 
-describe("6307. Pass the Pillow", () => {
+describe("2582. Pass the Pillow", () => {
   test.each([
     [4, 5, 2],
     [3, 2, 3],

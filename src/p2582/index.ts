@@ -3,7 +3,7 @@ export function exportWarp(n: number, time: number): number {
 }
 
 // 2023-03-04
-// 6307. Pass the Pillow
+// 2582. Pass the Pillow
 function passThePillow(n: number, time: number): number {
   const m = n - 1;
 

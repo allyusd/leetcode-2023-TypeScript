@@ -5,7 +5,7 @@ export function exportWarp(root: TreeNode | null, k: number): number {
 }
 
 // 2023-03-04
-// 6308. Kth Largest Sum in a Binary Tree
+// 2583. Kth Largest Sum in a Binary Tree
 function kthLargestLevelSum(root: TreeNode | null, k: number): number {
   if (root === null) {
     return -1;

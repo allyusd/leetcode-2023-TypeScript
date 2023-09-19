@@ -3,7 +3,7 @@ export function exportWarp(word: string, m: number): number[] {
 }
 
 // 2023-02-25
-// 6368. Find the Divisibility Array of a String
+// 2575. Find the Divisibility Array of a String
 // 試著用這個思維解題，但是時間到了
 // https://math.stackexchange.com/questions/2455480/divisibility-of-big-numbers
 function divisibilityArray(word: string, m: number): number[] {

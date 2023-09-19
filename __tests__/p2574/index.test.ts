@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6369";
+import { exportWarp } from "../../src/p2574";
 
-describe("6369. Left and Right Sum Differences", () => {
+describe("2574. Left and Right Sum Differences", () => {
   test.each([
     [
       [10, 4, 8, 3],

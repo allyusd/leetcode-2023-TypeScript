@@ -1,6 +1,6 @@
-import { exportWarp } from "../../src/p6367";
+import { exportWarp } from "../../src/p2576";
 
-describe.skip("6367. Find the Maximum Number of Marked Indices", () => {
+describe.skip("2576. Find the Maximum Number of Marked Indices", () => {
   test.each([
     [[3, 5, 2, 4], 2],
     [[9, 2, 5, 4], 4],
