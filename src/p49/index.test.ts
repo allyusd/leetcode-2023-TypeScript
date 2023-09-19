@@ -1,5 +1,6 @@
 import { exportWarp } from ".";
-import { input1 } from "./input.data";
+import { input1 } from "./input1.data";
+import { expect1 } from "./input1.expect";
 
 interface CaseSet {
   name: string;
@@ -28,8 +29,7 @@ describe("49. Group Anagrams", () => {
     },
     { name: "case 2", data: { arg: [[""]], expected: [[""]] } },
     { name: "case 3", data: { arg: [["a"]], expected: [["a"]] } },
-    // Time Limit Exceeded
-    { name: "input 1", data: { arg: [input1], expected: [["a"]] } },
+    { name: "large data input", data: { arg: [input1], expected: expect1 } },
   ])("$name", ({ data }) => {
     const result = exportWarp(...data.arg);
     sortArray(result);

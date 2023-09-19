@@ -4,26 +4,24 @@ export function exportWarp(strs: string[]): string[][] {
 
 // 2023-09-19
 // 49. Group Anagrams
+// 想到可以用 Hash Table 來加速
 function groupAnagrams(strs: string[]): string[][] {
   const output: string[][] = [];
 
-  const isAnagrams = (s: string, t: string) => {
-    return s.split("").sort().join("") === t.split("").sort().join("");
-  };
+  const map: Map<string, string[]> = new Map<string, string[]>();
 
   strs.forEach((str: string) => {
-    let newCase = true;
-    for (let i = 0; i < output.length; i++) {
-      if (isAnagrams(str, output[i][0])) {
-        output[i].push(str);
-        newCase = false;
-        break;
-      }
+    const hash = str.split("").sort().join("");
+    if (map.has(hash)) {
+      const list = map.get(hash);
+      list?.push(str);
+    } else {
+      map.set(hash, [str]);
     }
+  });
 
-    if (newCase) {
-      output.push([str]);
-    }
+  map.forEach((list: string[]) => {
+    output.push(list);
   });
 
   return output;
