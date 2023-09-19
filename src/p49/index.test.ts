@@ -1,4 +1,4 @@
-import { exportWarp } from "../../src/p49";
+import { exportWarp } from ".";
 
 interface CaseSet {
   name: string;
