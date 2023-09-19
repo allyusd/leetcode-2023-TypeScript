@@ -7,10 +7,12 @@ function gcd(a: number, b: number) {
   a = Math.abs(a);
   b = Math.abs(b);
   if (b > a) {
-    var temp = a;
+    const temp = a;
     a = b;
     b = temp;
   }
+
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     if (b == 0) return a;
     a %= b;
@@ -27,13 +29,13 @@ function findValidSplit(nums: number[]): number {
   };
 
   for (let i = 0; i < nums.length - 1; i++) {
-    let pp = product(nums.slice(0, i + 1));
-    let sp = product(nums.slice(i + 1, nums.length));
+    const pp = product(nums.slice(0, i + 1));
+    const sp = product(nums.slice(i + 1, nums.length));
 
     // console.log(`pp: ${pp}`);
     // console.log(`sp: ${sp}`);
 
-    let g = gcd(pp, sp);
+    const g = gcd(pp, sp);
     // console.log(`g: ${g}`);
 
     if (g === 1) {

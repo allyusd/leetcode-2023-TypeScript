@@ -29,6 +29,8 @@ function divisibilityArray(word: string, m: number): number[] {
 
   let first = 0;
   let last = 0;
+
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     end = start;
     start = start - y;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // ref: https://stackoverflow.com/a/49031341/2613884
 export function arrayContainEqualWithoutOrder(array1: any[], array2: any[]) {
   // check if they have equal length to ensure [1] !== [1, 1]

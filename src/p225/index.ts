@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function exportWarp(command: string[], data: number[][]): any[] {
   return implementStack(command, data);
 }
@@ -7,6 +8,7 @@ class MyStack {
   queue1: number[] = [];
   queue2: number[] = [];
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
   push(x: number): void {
