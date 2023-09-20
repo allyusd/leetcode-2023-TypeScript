@@ -12,6 +12,7 @@ describe(title, () => {
   test.each<CaseSet>([
     { name: "Example 1", data: { arg: [[1, 1, 1, 2, 2, 3], 2], expected: [1, 2] } },
     { name: "Example 2", data: { arg: [[1], 1], expected: [1] } },
+    { name: "Wrong Answer 1", data: { arg: [[3, 0, 1, 0], 1], expected: [0] } },
   ])("$name", ({ data }) => {
     const result = solution(...data.arg);
     expect(result).toStrictEqual(data.expected);
