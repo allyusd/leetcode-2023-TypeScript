@@ -1,20 +1,29 @@
 // 2023-09-21
 export const title = "238. Product of Array Except Self";
 
-// 看題目的直覺是雙 for 去跑，但是這樣是 O(n^2)，不符合題目要求
+// 沒想法，偷看 Topics，研究 Prefix Sum 之後，
+// 想到分別建立從左右累乘的陣列，最後取前後相乘，O(n) 符合題意
 // Accepted
-// Runtime 6545 ms Beats 6.41%
+// Runtime 104ms Beats 28.33%
 export default function productExceptSelf(nums: number[]): number[] {
   const output = [];
 
+  const productF: number[] = [];
+  const productB: number[] = [];
+
+  let f = 1;
+  let b = 1;
   for (let i = 0; i < nums.length; i++) {
-    let product = 1;
-    for (let j = 0; j < nums.length; j++) {
-      if (i !== j) {
-        product = product * nums[j];
-      }
-    }
-    output.push(product + 0);
+    productF[i] = f;
+    f = f * nums[i];
+
+    productB[nums.length - 1 - i] = b;
+    b = b * nums[nums.length - 1 - i];
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    const p = (i == 0 ? 1 : productF[i]) * (i == nums.length - 1 ? 1 : productB[i]);
+    output[i] = p + 0;
   }
 
   return output;
