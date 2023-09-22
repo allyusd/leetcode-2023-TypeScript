@@ -1,9 +1,9 @@
 export const title = "36. Valid Sudoku";
 
 // 2023-09-22
-// 後來發現速度會上上下下，決定改回原本作法，然後把共用檢查拉出來
+// 直接合併處理，這樣符合條件可以直接退出，節省時間
 // Accepted
-// Runtime Runtime 80 ms Beats 30.86%
+// Runtime 87 ms Beats 19.34%
 export default function isValidSudoku(board: string[][]): boolean {
   const initArray = () => {
     return Array(9)
@@ -15,16 +15,6 @@ export default function isValidSudoku(board: string[][]): boolean {
   const col: Set<string>[] = initArray();
   const box: Set<string>[] = initArray();
 
-  const check = (set: Set<string>, item: string): boolean => {
-    if (set.has(item)) {
-      return false;
-    } else {
-      set.add(item);
-    }
-
-    return true;
-  };
-
   for (let x = 0; x < board[0].length; x++) {
     for (let y = 0; y < board.length; y++) {
       const item = board[y][x];
@@ -33,18 +23,24 @@ export default function isValidSudoku(board: string[][]): boolean {
         continue;
       }
 
-      if (!check(row[y], item)) {
+      if (row[y].has(item)) {
         return false;
+      } else {
+        row[y].add(item);
       }
 
-      if (!check(col[x], item)) {
+      if (col[x].has(item)) {
         return false;
+      } else {
+        col[x].add(item);
       }
 
       const by = Math.floor(x / 3) + Math.floor(y / 3) * 3;
 
-      if (!check(box[by], item)) {
+      if (box[by].has(item)) {
         return false;
+      } else {
+        box[by].add(item);
       }
     }
   }
