@@ -1,9 +1,9 @@
 export const title = "36. Valid Sudoku";
 
 // 2023-09-22
-// 直覺，分別針對三個規則進行處理
+// 想說跑一次用公式解，結果居然變慢了
 // Accepted
-// Runtime 112 ms Beats 8.92%
+// Runtime 119 ms Beats 8.5%
 export default function isValidSudoku(board: string[][]): boolean {
   const isDuplicate = (arr: number[]) => {
     const set = new Set<number>();
@@ -23,37 +23,36 @@ export default function isValidSudoku(board: string[][]): boolean {
     return arr.map((x) => Number(x)).filter((x) => !Number.isNaN(x));
   };
 
-  // Check Row
+  const initArray = () => {
+    return Array(9)
+      .fill(null)
+      .map(() => Array(9));
+  };
+
+  const row: string[][] = initArray();
+  const col: string[][] = initArray();
+  const box: string[][] = initArray();
+
+  for (let x = 0; x < board[0].length; x++) {
+    for (let y = 0; y < board.length; y++) {
+      const item = board[y][x];
+      row[y][x] = item;
+      col[x][y] = item;
+      const by = Math.floor(x / 3) + Math.floor(y / 3) * 3;
+      const bx = ((x % 3) + (y % 3) * 3) % 9;
+      box[by][bx] = item;
+    }
+  }
+
   for (let i = 0; i < board.length; i++) {
-    if (isDuplicate(toNumber(board[i]))) {
+    if (isDuplicate(toNumber(row[i]))) {
       return false;
     }
-  }
-
-  // Check Col
-  for (let c = 0; c < board[0].length; c++) {
-    const col = [];
-    for (let r = 0; r < board.length; r++) {
-      col.push(board[r][c]);
-    }
-
-    if (isDuplicate(toNumber(col))) {
+    if (isDuplicate(toNumber(col[i]))) {
       return false;
     }
-  }
-
-  // Check 3 x 3 sub-boxe
-  for (let x = 1; x < board[0].length; x += 3) {
-    for (let y = 1; y < board.length; y += 3) {
-      const sub = [];
-      for (const dx of [-1, 0, 1]) {
-        for (const dy of [-1, 0, 1]) {
-          sub.push(board[y + dy][x + dx]);
-        }
-      }
-      if (isDuplicate(toNumber(sub))) {
-        return false;
-      }
+    if (isDuplicate(toNumber(box[i]))) {
+      return false;
     }
   }
 
