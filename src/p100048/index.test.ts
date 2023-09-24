@@ -69,6 +69,13 @@ describe(title, () => {
         expected: 2000000000,
       },
     },
+    {
+      name: "Test 4",
+      data: {
+        arg: [[1000000000]],
+        expected: 1000000000,
+      },
+    },
   ])("$name", ({ data }) => {
     const result = solution(...data.arg);
     expect(result).toStrictEqual(data.expected);

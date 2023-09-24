@@ -1,7 +1,7 @@
 export const title = "100048. Beautiful Towers II";
 
 // 2023-09-24
-// Wrong Answer
+// Time Limit Exceeded
 export default function maximumSumOfHeights(maxHeights: number[]): number {
   const beautiful = (maxHeights: number[], index: number): number => {
     const output = [...maxHeights];
@@ -23,22 +23,22 @@ export default function maximumSumOfHeights(maxHeights: number[]): number {
   let lmax = 0;
   let rmax = maxHeights.length - 1;
   for (let i = 0; i < maxHeights.length; i++) {
-    lmax = i;
-
     if (maxHeights[i + 1] < maxHeights[i]) {
       break;
     }
+
+    lmax = i;
   }
 
   for (let i = maxHeights.length - 1; i >= 0; i--) {
-    rmax = i;
-
     if (maxHeights[i - 1] < maxHeights[i]) {
       break;
     }
+
+    rmax = i;
   }
 
-  let max = 0;
+  let max = beautiful(maxHeights, 0);
 
   for (let i = lmax; i <= rmax; i++) {
     const count = beautiful(maxHeights, i);
