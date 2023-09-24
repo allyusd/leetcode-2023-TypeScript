@@ -1,6 +1,7 @@
 export const title = "100048. Beautiful Towers II";
 
 // 2023-09-24
+// Time Limit Exceeded
 export default function maximumSumOfHeights(maxHeights: number[]): number {
   const beautiful = (maxHeights: number[], index: number): number => {
     const output = [...maxHeights];
