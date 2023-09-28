@@ -24,6 +24,20 @@ describe(title, () => {
         expected: 9,
       },
     },
+    {
+      name: "Test 1",
+      data: {
+        arg: [[]],
+        expected: 0,
+      },
+    },
+    {
+      name: "Test 1",
+      data: {
+        arg: [[-6, 8, -5, 7, -9, -1, -7, -6, -9, -7, 5, 7, -1, -8, -8, -2, 0]],
+        expected: 4,
+      },
+    },
   ])("$name", ({ data }) => {
     const result = solution(...data.arg);
     expect(result).toStrictEqual(data.expected);
