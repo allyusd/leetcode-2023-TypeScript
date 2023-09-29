@@ -3,6 +3,7 @@ import _ from "lodash";
 export const title = "128. Longest Consecutive Sequence";
 
 // 2023-09-28
+// Wrong Answer
 export default function longestConsecutive(nums: number[]): number {
   if (nums.length === 0) {
     return 0;
@@ -12,12 +13,7 @@ export default function longestConsecutive(nums: number[]): number {
 
   nums.forEach((n) => {
     let match = false;
-    let skip = false;
     list.forEach((l) => {
-      if (n >= l[0] && n <= l[l.length - 1]) {
-        skip = true;
-      }
-
       if (n == l[0] - 1) {
         match = true;
         l.unshift(n);
@@ -47,9 +43,7 @@ export default function longestConsecutive(nums: number[]): number {
         list[front].push(...list[back]);
         list.splice(back, 1);
       }
-    }
-
-    if (!match && !skip) {
+    } else {
       list.push([n]);
     }
   });
@@ -60,8 +54,6 @@ export default function longestConsecutive(nums: number[]): number {
       max = l.length;
     }
   });
-
-  console.log(list);
 
   return max;
 }

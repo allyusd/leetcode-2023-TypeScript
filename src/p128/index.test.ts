@@ -32,10 +32,10 @@ describe(title, () => {
       },
     },
     {
-      name: "Test 1",
+      name: "Test 2",
       data: {
         arg: [[-6, 8, -5, 7, -9, -1, -7, -6, -9, -7, 5, 7, -1, -8, -8, -2, 0]],
-        expected: 4,
+        expected: 5,
       },
     },
   ])("$name", ({ data }) => {
