@@ -1,4 +1,6 @@
 import solution, { title } from ".";
+import { input1 } from "./input1.data";
+import { expect1 } from "./input1.expect";
 
 interface CaseSet {
   name: string;
@@ -34,8 +36,18 @@ describe(title, () => {
         expected: [[0, 0, 0]],
       },
     },
+    {
+      name: "Large 1",
+      data: {
+        arg: [input1],
+        expected: expect1,
+      },
+    },
   ])("$name", ({ data }) => {
-    const result = solution(...data.arg);
+    let result = solution(...data.arg);
+    result = result.sort();
+    console.log(JSON.stringify(result));
+    data.expected = data.expected.sort();
     expect(result).toStrictEqual(data.expected);
   });
 });
