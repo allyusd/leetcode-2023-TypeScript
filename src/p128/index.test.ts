@@ -1,4 +1,5 @@
 import solution, { title } from ".";
+import { input1 } from "./input1.data";
 
 interface CaseSet {
   name: string;
@@ -36,6 +37,13 @@ describe(title, () => {
       data: {
         arg: [[-6, 8, -5, 7, -9, -1, -7, -6, -9, -7, 5, 7, -1, -8, -8, -2, 0]],
         expected: 5,
+      },
+    },
+    {
+      name: "Large 1",
+      data: {
+        arg: [input1],
+        expected: 100000,
       },
     },
   ])("$name", ({ data }) => {

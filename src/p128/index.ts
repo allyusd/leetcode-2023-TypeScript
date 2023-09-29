@@ -3,6 +3,7 @@ import _ from "lodash";
 export const title = "128. Longest Consecutive Sequence";
 
 // 2023-09-28
+// Time Limit Exceeded
 export default function longestConsecutive(nums: number[]): number {
   if (nums.length === 0) {
     return 0;
