@@ -43,6 +43,13 @@ describe(title, () => {
         expected: expect1,
       },
     },
+    {
+      name: "Wrong Answer",
+      data: {
+        arg: [[0, 0, 0, 0]],
+        expected: [[0, 0, 0]],
+      },
+    },
   ])("$name", ({ data }) => {
     let result = solution(...data.arg);
     result = result.sort();
