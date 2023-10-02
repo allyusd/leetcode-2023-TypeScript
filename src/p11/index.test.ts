@@ -1,4 +1,5 @@
 import solution, { title } from ".";
+import { input1 } from "./input1.data";
 
 interface CaseSet {
   name: string;
@@ -24,8 +25,15 @@ describe(title, () => {
         expected: 1,
       },
     },
+    {
+      name: "Test 1",
+      data: {
+        arg: [input1],
+        expected: 1,
+      },
+    },
   ])("$name", ({ data }) => {
-    let result = solution(...data.arg);
+    const result = solution(...data.arg);
     expect(result).toStrictEqual(data.expected);
   });
 });
