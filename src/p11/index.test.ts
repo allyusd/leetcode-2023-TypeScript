@@ -29,7 +29,7 @@ describe(title, () => {
       name: "Test 1",
       data: {
         arg: [input1],
-        expected: 1,
+        expected: 721777500,
       },
     },
   ])("$name", ({ data }) => {
