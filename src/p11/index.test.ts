@@ -26,9 +26,6 @@ describe(title, () => {
     },
   ])("$name", ({ data }) => {
     let result = solution(...data.arg);
-    result = result.sort();
-    console.log(JSON.stringify(result));
-    data.expected = data.expected.sort();
     expect(result).toStrictEqual(data.expected);
   });
 });
